@@ -26,34 +26,36 @@ export function Features() {
     },
   ];
 
-  return (
-    <section className="py-12 md:py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={index}
-                className={`rounded-lg p-8 text-white shadow-lg bg-gradient-to-br ${feature.color}`}
-              >
-                <div className={`${feature.bgColor} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-white/90 mb-4 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-                <Button 
-                  className="bg-white text-current hover:bg-gray-100 rounded-full px-6 py-1 text-sm font-semibold"
-                >
-                  Explore
-                </Button>
+ return (
+  <section className=" bg-white">
+    <div className="w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+        {features.map((feature, index) => {
+          const Icon = feature.icon;
+
+          return (
+            <div
+              key={index}
+              className={`p-8 text-white bg-gradient-to-br ${feature.color}`}
+            >
+              <div className={`${feature.bgColor} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
+                <Icon className="w-6 h-6 text-white" />
               </div>
-            );
-          })}
-        </div>
+
+              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+
+              <p className="text-white/90 mb-4 text-sm leading-relaxed">
+                {feature.description}
+              </p>
+
+              <Button className="bg-white text-current hover:bg-gray-100 rounded-full px-6 py-1 text-sm font-semibold">
+                Explore
+              </Button>
+            </div>
+          );
+        })}
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }
